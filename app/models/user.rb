@@ -8,7 +8,12 @@ class User
   field :name
   field :encrypted_password
   field :salt
-  field :_id, type: String, default: -> { name }
+
+  # for 3.x
+  # field :_id, type: String, default: -> { name }
+
+  # for 2.x
+  key :name
 
   attr_accessor :password
 
