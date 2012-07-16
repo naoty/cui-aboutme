@@ -39,7 +39,6 @@ GEM
     eventmachine (0.12.10)
     excon (0.14.3)
     ffi (1.0.11)
-    friendly_id (4.0.7)
     growl (1.0.3)
     guard (1.2.3)
       listen (>= 0.4.2)
@@ -164,7 +163,6 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  friendly_id
   growl
   guard-pow
   guard-rspec

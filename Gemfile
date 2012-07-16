@@ -2,7 +2,6 @@ source :rubygems
 
 gem 'rails'
 gem 'mongoid'
-gem 'friendly_id'
 
 group :production do
   gem 'thin'
