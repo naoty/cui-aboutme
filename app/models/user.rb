@@ -14,7 +14,7 @@ class User
 
   before_save :encrypt_password
 
-  INVISIBLE_ITEMS = ['_id', 'created_at', 'updated_at', 'encrypted_password', 'salt']
+  UNLISTED_ITEMS = ['_id', 'name', 'created_at', 'updated_at', 'encrypted_password', 'salt']
 
   def self.new(params)
     user_params = params.reject {|field| ['controller', 'action'].include?(field) }
@@ -31,7 +31,7 @@ class User
   end
 
   def items
-    attributes.reject {|field| INVISIBLE_ITEMS.include?(field) }
+    attributes.reject {|field| UNLISTED_ITEMS.include?(field) }
   end
 
   private
