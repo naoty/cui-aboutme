@@ -3,4 +3,5 @@ class User
   include Mongoid::Timestamps
 
   field :name
+  field :_id, type: String, default: -> { name }
 end
