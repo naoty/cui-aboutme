@@ -26,4 +26,10 @@ class UsersController < ApplicationController
       render 'error', status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    render 'success', status: :ok
+  end
 end
