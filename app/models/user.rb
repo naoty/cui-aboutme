@@ -2,6 +2,9 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  UNLISTED_ITEMS = ['_id', 'name', 'created_at', 'updated_at', 'encrypted_password', 'salt']
+  RESERVED_NAMES = ['users', 'signup']
+
   field :name
   field :encrypted_password
   field :salt
@@ -10,11 +13,9 @@ class User
   attr_accessor :password
 
   index({ name: 1 }, { unique: true })
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true, exclusion: { in: RESERVED_NAMES }
 
   before_save :encrypt_password
-
-  UNLISTED_ITEMS = ['_id', 'name', 'created_at', 'updated_at', 'encrypted_password', 'salt']
 
   def self.new(params)
     user_params = params.reject {|field| ['controller', 'action'].include?(field) }
