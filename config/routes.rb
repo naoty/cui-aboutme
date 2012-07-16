@@ -5,5 +5,5 @@ CuiAboutme::Application.routes.draw do
   put    ':id'    => 'users#update'
   delete ':id'    => 'users#destroy'
 
-  root to: 'users#index'
+  root to: 'home#index'
 end

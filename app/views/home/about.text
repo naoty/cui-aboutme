@@ -1,0 +1,27 @@
+NAME
+       cui-about.me -- The hackers' profile downloader for your terminal
+
+COMMANDS
+       curl http://cui-about.me/
+              Prints how to use this service.
+
+       curl http://cui-about.me/users
+              Prints names of all users.
+
+       curl http://cui-about.me/[username]
+              Prints the profile of username.
+
+       curl -X POST -d 'name=[yourname]' -d 'password=[password]' [-d '[field]=[value]'] http://cui-about.me/users
+              Signup you with name, password and any infos. Name and password are required.
+
+       curl -X PUT -d 'password=[password]' [-d '[field]=[value]'] http://cui-about.me/[yourname]
+              Update your profile. Password is required.
+
+       curl -X DELETE -d 'password=[password]' http://cui-about.me/[yourname]
+              Delete your profile. Password is required.
+
+SEE ALSO
+       Github: http://github.com/naoty/cui-aboutme
+
+AUTHOR
+       naoty -- curl http://cui-about.me/naoty
