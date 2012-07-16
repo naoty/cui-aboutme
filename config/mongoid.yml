@@ -69,7 +69,11 @@ test:
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGOHQ_URL'] %>
+      hosts:
+        - <%= ENV['MONGOHQ_URL'] %>
+      database: cui_aboutme_production
+      username: cui_aboutme
+      password: cui_aboutme
     options:
       skip_version_check: true
       safe: true
