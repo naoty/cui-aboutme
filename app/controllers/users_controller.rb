@@ -29,7 +29,11 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
-    render 'success', status: :ok
+    if @user.authenticate(params[:password])
+      @user.destroy
+      render 'success', status: :ok
+    else
+      render 'unauthorized', status: :unauthorized
+    end
   end
 end
