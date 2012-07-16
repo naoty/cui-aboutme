@@ -15,8 +15,13 @@ class User
 
   INVISIBLE_ITEMS = ['_id', 'created_at', 'updated_at', 'encrypted_password']
 
+  def self.new(params)
+    user_params = params.reject {|field| ['controller', 'action'].include?(field) }
+    super(user_params)
+  end
+
   def items
-    attributes.reject {|attr| INVISIBLE_ITEMS.include?(attr) }
+    attributes.reject {|field| INVISIBLE_ITEMS.include?(field) }
   end
 
   private
