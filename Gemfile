@@ -2,6 +2,7 @@ source :rubygems
 
 gem 'rails'
 gem 'mongoid'
+gem 'bcrypt-ruby', require: 'bcrypt'
 
 group :production do
   gem 'thin'
