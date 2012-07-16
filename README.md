@@ -1,7 +1,7 @@
-# cui-aboutme
+# cui-about.me
 The hacker's profile downloader for your terminal
 
-Prints how to use this service
+Prints how to use this service.
 
 ```sh
 $ curl http://cui-about.me
@@ -13,7 +13,7 @@ Prints names of all users.
 $ curl http://cui-about.me/users
 ```
 
-Prints the profile of username
+Prints the profile of username.
 
 ```sh
 $ curl http://cui-about.me/[username]
