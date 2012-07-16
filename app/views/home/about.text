@@ -11,7 +11,7 @@ COMMANDS
        curl http://cui-about.me/[username]
               Prints the profile of username.
 
-       curl -X POST -d 'name=[yourname]' -d 'password=[password]' [-d '[field]=[value]'] http://cui-about.me/users
+       curl -X POST -d 'name=[yourname]' -d 'password=[password]' [-d '[field]=[value]'] http://cui-about.me/signup
               Signup you with name, password and any infos. Name and password are required.
 
        curl -X PUT -d 'password=[password]' [-d '[field]=[value]'] http://cui-about.me/[yourname]
