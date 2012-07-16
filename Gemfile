@@ -1,7 +1,7 @@
 source :rubygems
 
 gem 'rails'
-gem 'mongoid', github: 'mongoid/mongoid'
+gem 'mongoid', '~> 2.4'
 gem 'bcrypt-ruby', require: 'bcrypt'
 
 group :production do
