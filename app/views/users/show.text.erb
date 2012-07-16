@@ -1,4 +1,6 @@
 name = <%= @user.name %>
 <% @user.items.each do |f, v| -%>
+<% if v.present? -%>
 <%= f %> = <%= v %>
+<% end -%>
 <% end -%>
