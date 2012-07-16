@@ -13,6 +13,12 @@ class User
 
   before_save :encrypt_password
 
+  INVISIBLE_ITEMS = ['_id', 'created_at', 'updated_at', 'encrypted_password']
+
+  def items
+    attributes.reject {|attr| INVISIBLE_ITEMS.include?(attr) }
+  end
+
   private
 
   def encrypt_password
