@@ -1,6 +1,7 @@
 source :rubygems
 
 gem 'rails'
+gem 'bson_ext'
 gem 'mongoid', '~> 2.4'
 gem 'bcrypt-ruby', require: 'bcrypt'
 
