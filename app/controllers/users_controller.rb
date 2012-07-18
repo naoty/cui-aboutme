@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_filter :redirect_to_home
+
   def index
     @users = User.all
   end
@@ -36,4 +39,13 @@ class UsersController < ApplicationController
       render 'unauthorized', status: :unauthorized
     end
   end
+
+  private
+
+  def redirect_to_home
+    unless request.user_agent =~ /curl/
+      redirect_to root_path
+    end
+  end
+
 end
