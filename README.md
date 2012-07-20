@@ -31,6 +31,13 @@ Update your profile. Password is required.
 $ curl -X PUT -d 'password=[password]' [-d '[field]=[value]'] http://cui-about.me/[yourname]
 ```
 
+If you want to delete items, update the values of the items into blank.
+For example, if you want to delete 'foo' item, you will only run a command like this:
+
+```sh
+$ curl -X PUT -d 'password=[password]' -d 'foo=' http://cui-about.me/[yourname]
+```
+
 Delete your profile. Password is required.
 
 ```sh
