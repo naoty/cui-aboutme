@@ -20,17 +20,7 @@ class User
   index({ name: 1 }, { unique: true })
   validates :name, presence: true, uniqueness: true, exclusion: { in: RESERVED_NAMES }, format: { with: /^\w+$/ }
 
-  before_save :encrypt_password
-
-  def self.new(params)
-    user_params = params.reject {|field| ['controller', 'action'].include?(field) }
-    super(user_params)
-  end
-
-  def update_attributes(params)
-    user_params = params.reject {|field| ['controller', 'action'].include?(field) }
-    super(user_params)
-  end
+  before_save :encrypt_password, :slice_items, :remove_items
 
   def authenticate(password)
     self.encrypted_password == BCrypt::Engine.hash_secret(password, self.salt)
@@ -48,4 +38,15 @@ class User
       self.encrypted_password = BCrypt::Engine.hash_secret(@password, self.salt)
     end
   end
+
+  def slice_items
+    ['controller', 'action', 'format'].each {|params| self.unset(params) }
+  end
+
+  def remove_items
+    self.attributes.each do |f, v|
+      self.unset(f) if !UNLISTED_ITEMS.include?(f) && v.blank?
+    end
+  end
+
 end
