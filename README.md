@@ -32,7 +32,7 @@ $ curl -X PUT -d 'password=[password]' [-d '[field]=[value]'] http://cui-about.m
 ```
 
 If you want to delete items, update the values of the items into blank.
-For example, if you want to delete 'foo' item, you will only run a command like this:
+For example, if you want to delete `foo` item, you will only run a command like this:
 
 ```sh
 $ curl -X PUT -d 'password=[password]' -d 'foo=' http://cui-about.me/[yourname]
