@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by_slug(params[:id])
   end
 
   def create
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.find_by_slug(params[:id])
     if not @user.authenticate(params[:password])
       render 'unauthorized', status: :unauthorized
     elsif @user.update_attributes(params)
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
+    @user = User.find_by_slug(params[:id])
     if @user.authenticate(params[:password])
       @user.destroy
       render 'success', status: :ok

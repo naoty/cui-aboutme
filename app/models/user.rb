@@ -22,6 +22,11 @@ class User
 
   before_save :encrypt_password, :slice_items, :remove_items
 
+  def self.find_by_slug(id)
+    hyphenized_id = id.gsub(/_/) { '-undscr-' }
+    self.find(hyphenized_id)
+  end
+
   def authenticate(password)
     self.encrypted_password == BCrypt::Engine.hash_secret(password, self.salt)
   end
