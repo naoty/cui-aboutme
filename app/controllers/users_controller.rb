@@ -8,6 +8,16 @@ class UsersController < ApplicationController
     @user = User.find_by_slug(params[:id])
   end
 
+  def item
+    user = User.find_by_slug(params[:id])
+    @item_value = user.read_attribute(params[:item])
+    if @item_value
+      render status: :ok
+    else
+      render '404_item', status: :not_found
+    end
+  end
+
   def create
     @user = User.new(params)
     if @user.save
