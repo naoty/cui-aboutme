@@ -17,7 +17,8 @@ class User
 
   attr_accessor :password
 
-  index({ name: 1 }, { unique: true })
+  index :name, unique: true
+  index :created_at
   validates :name, presence: true, uniqueness: true, exclusion: { in: RESERVED_NAMES }, format: { with: /^\w+$/ }
 
   before_save :encrypt_password, :slice_items, :remove_items
