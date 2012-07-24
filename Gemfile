@@ -1,13 +1,10 @@
 source :rubygems
 
 gem 'rails'
+gem 'thin'
 gem 'bson_ext'
 gem 'mongoid', '~> 2.4'
 gem 'bcrypt-ruby', require: 'bcrypt'
-
-group :production do
-  gem 'thin'
-end
 
 group :development, :test do
   gem 'pry-rails'
@@ -24,5 +21,4 @@ end
 group :development do
   gem 'heroku'
   gem 'powder'
-  gem 'guard-pow'
 end

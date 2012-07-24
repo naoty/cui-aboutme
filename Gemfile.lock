@@ -47,8 +47,6 @@ GEM
     guard (1.2.3)
       listen (>= 0.4.2)
       thor (>= 0.14.6)
-    guard-pow (1.0.0)
-      guard (>= 1.1)
     guard-rspec (1.2.0)
       guard (>= 1.1)
     guard-spork (1.1.0)
@@ -169,7 +167,6 @@ DEPENDENCIES
   bcrypt-ruby
   bson_ext
   growl
-  guard-pow
   guard-rspec
   guard-spork
   heroku
