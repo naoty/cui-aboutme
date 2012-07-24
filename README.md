@@ -13,10 +13,16 @@ Prints names of all users.
 $ curl http://cui-about.me/users
 ```
 
-Prints the profile of username.
+Prints a user's profile.
 
 ```sh
 $ curl http://cui-about.me/[username]
+```
+
+Prints a specific item of a user's profile.
+
+```sh
+$ curl http://cui-about.me/[username]/[item]
 ```
 
 Signup you with name, password and any infos. Name and password are required.

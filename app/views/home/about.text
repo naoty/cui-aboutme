@@ -9,7 +9,10 @@ COMMANDS
               Prints names of all users.
 
        curl http://cui-about.me/[username]
-              Prints the profile of username.
+              Prints a user's profile.
+
+       curl http://cui-about.me/[username]/[item]
+              Prints a specific item of a user's profile.
 
        curl -X POST -d 'name=[yourname]' -d 'password=[password]' [-d '[field]=[value]'] http://cui-about.me/signup
               Signup you with name, password and any infos. Name and password are required.
