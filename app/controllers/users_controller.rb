@@ -5,11 +5,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_slug(params[:id])
+    @user = User.find_by_name(params[:id])
   end
 
   def item
-    user = User.find_by_slug(params[:id])
+    user = User.find_by_name(params[:id])
     @item_value = user.read_attribute(params[:item])
     if @item_value
       render status: :ok
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find_by_slug(params[:id])
+    @user = User.find_by_name(params[:id])
     if not @user.authenticate(params[:password])
       render 'unauthorized', status: :unauthorized
     elsif @user.update_attributes(params)
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find_by_slug(params[:id])
+    @user = User.find_by_name(params[:id])
     if @user.authenticate(params[:password])
       @user.destroy
       render 'success', status: :ok

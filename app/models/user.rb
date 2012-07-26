@@ -23,9 +23,14 @@ class User
 
   before_save :encrypt_password, :slice_items, :remove_items
 
-  def self.find_by_slug(id)
-    hyphenized_id = id.gsub(/_/) { '-undscr-' }
-    self.find(hyphenized_id)
+  def self.find_by_name(name)
+    converted_name = name.gsub(/_/) { '-undscr-' }
+    converted_name = converted_name.downcase
+    user = self.where(_id: converted_name).first
+    if user.blank?
+      raise Mongoid::Errors::DocumentNotFound.new(User, name)
+    end
+    user
   end
 
   def authenticate(password)
