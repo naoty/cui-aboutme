@@ -19,7 +19,11 @@ class User
 
   index :name, unique: true
   index :created_at
-  validates :name, presence: true, uniqueness: true, exclusion: { in: RESERVED_NAMES }, format: { with: /^\w+$/ }
+  validates :name,
+    presence: true,
+    uniqueness: { case_sensitive: false },
+    exclusion: { in: RESERVED_NAMES },
+    format: { with: /^\w+$/ }
 
   before_save :encrypt_password, :slice_items, :remove_items
 
