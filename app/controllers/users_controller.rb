@@ -18,6 +18,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def man
+    @user = User.find_by_name(params[:id])
+  end
+
   def create
     @user = User.new(params)
     if @user.save
