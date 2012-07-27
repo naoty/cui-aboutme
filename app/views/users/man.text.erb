@@ -1,2 +1,7 @@
 <%= 'NAME'.bold %>
 <%= indent @user.name_with_summary %>
+<% if @user.description -%>
+
+<%= 'DESCRIPTION'.bold %>
+<%= wrap @user.description %>
+<% end -%>
