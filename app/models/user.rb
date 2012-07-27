@@ -6,6 +6,8 @@ class User
   RESERVED_NAMES = ['users', 'signup']
 
   field :name
+  field :summary
+  field :description
   field :encrypted_password
   field :salt
 
@@ -43,6 +45,11 @@ class User
 
   def items
     attributes.reject {|field| UNLISTED_ITEMS.include?(field) }
+  end
+
+  def name_with_summary
+    self.name += " -- #{summary}" if summary.present?
+    self.name
   end
 
   private
