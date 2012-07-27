@@ -19,6 +19,12 @@ Prints a user's profile.
 $ curl http://cui-about.me/[username]
 ```
 
+Prints a user's profile like man.
+
+```sh
+$ curl http://cui-about.me/[username]/man
+```
+
 Prints a specific item of a user's profile.
 
 ```sh
