@@ -26,6 +26,8 @@ class User
     uniqueness: { case_sensitive: false },
     exclusion: { in: RESERVED_NAMES },
     format: { with: /^\w+$/ }
+  validates :summary,
+    length: { maximum: 70 }
 
   before_save :encrypt_password, :slice_items, :remove_items
 
