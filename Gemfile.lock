@@ -148,6 +148,7 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    term-ansicolor (1.0.7)
     thin (1.4.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -178,4 +179,5 @@ DEPENDENCIES
   rb-fsevent
   rspec-rails
   spork
+  term-ansicolor
   thin

@@ -5,6 +5,7 @@ gem 'thin'
 gem 'bson_ext'
 gem 'mongoid', '~> 2.4'
 gem 'bcrypt-ruby', require: 'bcrypt'
+gem 'term-ansicolor'
 
 group :development, :test do
   gem 'pry-rails'
