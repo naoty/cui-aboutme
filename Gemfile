@@ -1,5 +1,7 @@
 source :rubygems
 
+ruby '1.9.3'
+
 gem 'rails'
 gem 'thin'
 gem 'bson_ext'
