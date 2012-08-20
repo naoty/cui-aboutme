@@ -2,7 +2,7 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  UNLISTED_ITEMS = ['_id', 'name', 'created_at', 'updated_at', 'encrypted_password', 'salt', 'summary', 'description']
+  UNLISTED_ITEMS = ['_id', 'name', 'created_at', 'updated_at', 'encrypted_password', 'salt', 'description']
   RESERVED_NAMES = ['users', 'signup']
 
   field :name
