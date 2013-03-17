@@ -1,4 +1,7 @@
 name = <%= @user.name %>
+<% if @user.summary -%>
+summary = <%= @user.summary %>
+<% end -%>
 <% @user.items.each do |f, v| -%>
 <% if v.present? -%>
 <%= f %> = <%= v %>
